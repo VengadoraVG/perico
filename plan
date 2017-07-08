@@ -1,0 +1,24 @@
+BEGINNER
+simplest
+proximity (works with several talkers)
+several statements (without textasset)
+several statements (with textasset)
+introducing names and faces
+
+INTERMEDIATE
+working with the state machine!! :O
+- theory of a state machine? (do by hand what the state machine has to do automatically)
+- modular scripts that interactuate with the state machine
+  - OnReadGoToNext (int index)
+  - OnVisitedGoTo (visitedPlace, destinationIndex)
+    - prove that it is easy to extend!!
+      - OnTalkedGoTo (talker talked to, dialogue talked, destination dialogue index)
+
+ADVANCED
+working in multi scenes
+- the difficulties, the need of persistence (the need of a DialogueController), and an introduction to dictionaries
+- pointers and the problem on the dictionary
+- talkers that remember it's state (dialogue controller as singleton?)
+- visited places that remember being visited
+- player that remembers visited places.
+- prove that it is easy to extend by extending it to OnTalkedGoTo

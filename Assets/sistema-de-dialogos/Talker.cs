@@ -7,19 +7,24 @@ public class Talker : MonoBehaviour {
     public int current;
     public TextDisplayer text;
 
+    public ProximityDetector proximityDetector;
+    public bool canTalk = false;
     public bool isTalking = false;
+    public GameObject canTalkIndicator;
 
     void Update () {
-        if (Input.GetKeyDown(KeyCode.Space)) {
-            if (!isTalking) {
-                Talk();
-            } else {
-                StopTalking();
-            }
-        } 
+        canTalkIndicator.SetActive(canTalk);
     }
 
     public void Talk () {
+        if (IsDoneTalking()) {
+            StopTalking();
+        } else {
+            KeepTalking();
+        }
+    }
+
+    public void KeepTalking () {
         isTalking = true;
         text.DisplayText(dialogues[current]);
     }
@@ -27,5 +32,9 @@ public class Talker : MonoBehaviour {
     public void StopTalking () {
         isTalking = false;
         text.Hide();
+    }
+
+    public bool IsDoneTalking () {
+        return isTalking;
     }
 }
