@@ -1,0 +1,11 @@
+{
+  "statement": [
+    {
+      "message": "somebody set us up the BOMB!",
+      "key": "operator"
+    }, {
+      "message": "main screen turn on",
+      "key": "operator"
+    }
+  ]
+}

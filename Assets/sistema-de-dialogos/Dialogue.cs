@@ -5,16 +5,16 @@ using System.Collections.Generic;
 
 [Serializable]
 public class Dialogue {
-    public List<string> statement;
+    public List<Statement> statement;
     public int current;
     public bool readen; // thou shall not question my ancient grammar!
 
-    public string CurrentStatement {
+    public Statement CurrentStatement {
         get {
             try {
                 return statement[current];
             } catch {
-                return "";
+                return null;
             }
         }
     }

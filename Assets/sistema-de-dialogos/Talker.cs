@@ -1,9 +1,8 @@
 using UnityEngine;
 using System.Collections;
-using System.Collections.Generic;
 
 public class Talker : MonoBehaviour {
-    public List<Dialogue> dialogue;
+    public TextAsset[] rawDialogue;
     public int current;
     public TextDisplayer text;
 
@@ -12,14 +11,26 @@ public class Talker : MonoBehaviour {
     public bool isTalking = false;
     public GameObject canTalkIndicator;
 
+    private Dialogue[] _dialogue;
+
     void Start () {
-        for (int i=0; i<dialogue.Count; i++) {
-            dialogue[i].Reset();
+        _DigestDialogue();
+
+        for (int i=0; i<_dialogue.Length; i++) {
+            _dialogue[i].Reset();
         }
     }
 
     void Update () {
         canTalkIndicator.SetActive(canTalk);
+    }
+
+    private void _DigestDialogue () {
+        _dialogue = new Dialogue[rawDialogue.Length];
+
+        for (int i=0; i<rawDialogue.Length; i++) {
+            _dialogue[i] = JsonUtility.FromJson<Dialogue>(rawDialogue[i].text);
+        }
     }
 
     public void Talk () {
@@ -32,17 +43,17 @@ public class Talker : MonoBehaviour {
 
     public void KeepTalking () {
         isTalking = true;
-        dialogue[current].Next();
-        text.DisplayText(dialogue[current].CurrentStatement);
+        _dialogue[current].Next();
+        text.DisplayText(_dialogue[current].CurrentStatement.message);
     }
 
     public void StopTalking () {
         isTalking = false;
         text.Hide();
-        dialogue[current].Cancel();
+        _dialogue[current].Cancel();
     }
 
     public bool IsDoneTalking () {
-        return !dialogue[current].HasNext();
+        return !_dialogue[current].HasNext();
     }
 }
