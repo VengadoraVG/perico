@@ -2,7 +2,7 @@ using UnityEngine;
 using System;
 using System.Collections;
 
-namespace DialogueSystem {
+namespace Perico {
     public class Util {
         public static T FindComponentWithTag<T> (string tag) where T : Behaviour {
             T component = null;

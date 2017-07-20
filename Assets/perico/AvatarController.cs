@@ -2,7 +2,7 @@ using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
 
-namespace DialogueSystem {
+namespace Perico {
     public class AvatarController : MonoBehaviour {
         public Dictionary<string, Avatar> avatar = new Dictionary<string, Avatar>();
         public GameObject avatarCamera;

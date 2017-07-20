@@ -1,7 +1,7 @@
 using UnityEngine;
 using System.Collections;
 
-namespace DialogueSystem {
+namespace Perico {
     public class Talker : MonoBehaviour {
         public TextAsset[] rawDialogue;
         public int current;

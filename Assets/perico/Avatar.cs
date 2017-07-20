@@ -1,7 +1,7 @@
 using UnityEngine;
 using System.Collections;
 
-namespace DialogueSystem {
+namespace Perico {
     public class Avatar : MonoBehaviour {
         public string key;
         public string displayName;
@@ -19,7 +19,7 @@ namespace DialogueSystem {
         public Animator _animator;
 
         void Start () {
-            _controller = DialogueSystem.Util.FindAvatarController();
+            _controller = Util.FindAvatarController();
             _controller.Register(this);
             _speaker = GetComponent<AudioSource>();
             _animator = Util.FindComponentOnChildren<Animator>(this.transform);

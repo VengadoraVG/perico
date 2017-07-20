@@ -1,7 +1,7 @@
 using UnityEngine;
 using System.Collections;
 
-namespace DialogueSystem {
+namespace Perico {
     [System.Serializable]
     public class Statement {
         public string message;

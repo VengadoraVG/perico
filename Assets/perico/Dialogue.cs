@@ -3,7 +3,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 
-namespace DialogueSystem {
+namespace Perico {
     [Serializable]
     public class Dialogue {
         public List<Statement> statement;

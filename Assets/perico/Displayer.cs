@@ -2,7 +2,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using System.Collections;
 
-namespace DialogueSystem {
+namespace Perico {
     public class Displayer : MonoBehaviour {
         public GameObject dialogueBox;
         public GameObject messageBox;
@@ -13,7 +13,7 @@ namespace DialogueSystem {
         private AvatarController _avatarController;
 
         void Start () {
-            _avatarController = DialogueSystem.Util.FindAvatarController();
+            _avatarController = Util.FindAvatarController();
             _uiMessage = messageBox.GetComponent<Text>();
             _uiName = nameBox.GetComponent<Text>();
             Hide();
