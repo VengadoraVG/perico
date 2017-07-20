@@ -14,5 +14,13 @@ namespace DialogueSystem {
         public void Register (Avatar avatar) {
             this.avatar[avatar.key] = avatar;
         }
+
+        public string GetName (Statement statement) {
+            if (avatar.ContainsKey(statement.key)) {
+                return avatar[statement.key].displayName;
+            }
+
+            return "";
+        }
     }
 }
