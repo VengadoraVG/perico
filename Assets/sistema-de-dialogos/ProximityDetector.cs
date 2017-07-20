@@ -1,28 +1,30 @@
 using UnityEngine;
 using System.Collections;
 
-public class ProximityDetector : MonoBehaviour {
-    public bool triggered = false;
+namespace DialogueSystem {
+    public class ProximityDetector : MonoBehaviour {
+        public bool triggered = false;
 
-    public delegate void EnterDetection (GameObject detected);
-    public EnterDetection OnEnterDetection;
+        public delegate void EnterDetection (GameObject detected);
+        public EnterDetection OnEnterDetection;
 
-    public delegate void ExitDetection (GameObject detected);
-    public EnterDetection OnExitDetection;
+        public delegate void ExitDetection (GameObject detected);
+        public EnterDetection OnExitDetection;
 
-    void OnTriggerEnter (Collider c) {
-        triggered = true;
+        void OnTriggerEnter (Collider c) {
+            triggered = true;
 
-        if (OnEnterDetection != null) {
-            OnEnterDetection(c.gameObject);
+            if (OnEnterDetection != null) {
+                OnEnterDetection(c.gameObject);
+            }
         }
-    }
 
-    void OnTriggerExit (Collider c) {
-        triggered = false;
+        void OnTriggerExit (Collider c) {
+            triggered = false;
 
-        if (OnExitDetection != null) {
-            OnExitDetection(c.gameObject);
+            if (OnExitDetection != null) {
+                OnExitDetection(c.gameObject);
+            }
         }
     }
 }
