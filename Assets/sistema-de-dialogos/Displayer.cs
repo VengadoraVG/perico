@@ -5,8 +5,8 @@ using System.Collections;
 namespace DialogueSystem {
     public class Displayer : MonoBehaviour {
         public GameObject dialogueBox;
-        public GameObject message;
-        public GameObject name;
+        public GameObject messageBox;
+        public GameObject nameBox;
 
         private Text _uiMessage;
         private Text _uiName;
@@ -14,8 +14,8 @@ namespace DialogueSystem {
 
         void Start () {
             _avatarController = DialogueSystem.Util.FindAvatarController();
-            _uiMessage = message.GetComponent<Text>();
-            _uiName = name.GetComponent<Text>();
+            _uiMessage = messageBox.GetComponent<Text>();
+            _uiName = nameBox.GetComponent<Text>();
             Hide();
         }
 
