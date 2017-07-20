@@ -4,21 +4,23 @@ using System.Collections;
 
 namespace DialogueSystem {
     public class Util {
-        public static AvatarController FindAvatarController () {
-            AvatarController controller = null;
-
+        public static T FindComponentWithTag<T> (string tag) where T : Behaviour {
+            T component = null;
             try {
-                controller = GameObject.FindWithTag("GameController")
-                    .GetComponent<AvatarController>();
+                component = GameObject.FindWithTag(tag).GetComponent<T>();
             } catch (NullReferenceException) {
-                throw new Exception("couldn't find a game object with the tag GameController.");
+                throw new Exception("couldn't find a game objecti with the tag " + tag + ".");
             }
 
-            if (controller == null) {
-                throw new Exception("couldn't find GameController with AvatarController");
+            if (component == null) {
+                throw new Exception("there is not that component attached to that game object.");
             }
 
-            return controller;
+            return component;
+        }
+
+        public static AvatarController FindAvatarController () {
+            return FindComponentWithTag<AvatarController>("GameController");
         }
 
         public static GameObject FindParentWithTag (Transform t, string tag) {

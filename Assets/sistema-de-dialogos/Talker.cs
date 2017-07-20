@@ -20,6 +20,8 @@ namespace DialogueSystem {
             for (int i=0; i<_dialogue.Length; i++) {
                 _dialogue[i].Reset();
             }
+
+            text = Util.FindComponentWithTag<Displayer>("unique displayer");
         }
 
         void Update () {
