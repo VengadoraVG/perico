@@ -7,8 +7,8 @@ namespace DialogueSystem {
         public Dictionary<string, Avatar> avatar = new Dictionary<string, Avatar>();
         public GameObject avatarCamera;
 
-        public void Display (string key) {
-            avatar[key].GetFocused(avatarCamera);
+        public void Display (Statement statement) {
+            avatar[statement.key].GetFocused(avatarCamera, statement);
         }
 
         public void Register (Avatar avatar) {

@@ -21,7 +21,7 @@ namespace DialogueSystem {
                 _ui.text = statement.message;
             }
 
-            _avatarController.Display(statement.key);
+            _avatarController.Display(statement);
             Show();
         }
 

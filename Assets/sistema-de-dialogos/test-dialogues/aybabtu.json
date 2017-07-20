@@ -2,13 +2,16 @@
   "statement": [
     {
       "message": "all your base are belong to us",
-      "key": "cats"
+      "key": "cats",
+      "emotion": "happy"
     }, {
       "message": "you have no chance to survive",
-      "key": "cats"
+      "key": "cats",
+      "emotion": "happy"
     }, {
       "message": "make your time",
-      "key": "cats"
+      "key": "cats",
+      "emotion": "sad"
     }
   ]
 }

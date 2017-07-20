@@ -33,5 +33,26 @@ namespace DialogueSystem {
             return null;
         }
 
+        // BFS
+        public static T FindComponentOnChildren<T> (Transform t) where T : Behaviour {
+            T found = null;
+
+            for (int i=0; i<t.childCount; i++) {
+                found = t.GetChild(i).gameObject.GetComponent<T>();
+                if (found != null) {
+                    return found;
+                }
+            }
+
+            for (int i=0; i<t.childCount; i++) {
+                found = FindComponentOnChildren<T>(t.GetChild(i));
+                if (found != null) {
+                    return found;
+                }
+            }
+
+            return found;
+        }
+
     }
 }

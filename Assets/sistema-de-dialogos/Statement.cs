@@ -6,5 +6,6 @@ namespace DialogueSystem {
     public class Statement {
         public string message;
         public string key;
+        public string emotion;
     }
 }

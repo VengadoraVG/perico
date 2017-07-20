@@ -41,6 +41,11 @@ ModelImporter:
     7400004: Armature|SadTalk.001
     7400006: Armature|Talk
     7400008: Plane|Talk
+    7400010: Armature|StopTalkingHappy
+    7400012: Armature|StopTalkingSad
+    7400014: Armature|x
+    7400016: Plane|HappyTalk
+    7400018: Plane|x
     9500000: //RootNode
     13700000: Plane
   materials:

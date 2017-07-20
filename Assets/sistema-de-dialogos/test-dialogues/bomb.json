@@ -2,10 +2,12 @@
   "statement": [
     {
       "message": "somebody set us up the BOMB!",
-      "key": "operator"
+      "key": "operator",
+      "emotion": "sad"
     }, {
       "message": "main screen turn on",
-      "key": "operator"
+      "key": "operator",
+      "emotion": "sad"
     }
   ]
 }

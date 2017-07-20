@@ -2,10 +2,12 @@
   "statement": [
     {
       "message": "take off every ZIG",
-      "key": "captain"
+      "key": "captain",
+      "emotion": "sad"
     }, {
       "message": "for great justice",
-      "key": "captain"
+      "key": "captain",
+      "emotion": "happy"
     }
   ]
 }
